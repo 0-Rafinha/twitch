@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitch</title>
+    <link rel="shortcut icon" href="/twitch/assets/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="logo"><img src="/twitch/assets/logo.png" alt=""></div>
+        <div class="layout-header">
+            <a href="#" class="navigation-link">
+                <p>Seguindo</p>
+            </a>
+        </div>
+        <div class="layout-header">
+            <a href="#" class="navigation-link">
+                <p>Procurar</p>
+            </a>
+        </div>
+        <div class="layout-risco"></div>
+        <div class="layout-header">
+            <a href="#" class="navigation-link">
+                <p>Esports</p>
+            </a>
+        </div>
+        <div class="layout-header">
+            <a href="#" class="navigation-link">
+                <p>Música</p>
+            </a>
+        </div>
+        <div class="div-elipse">
+            <button class="btn-elipse"><img src="/twitch/assets/elipse.svg" alt="" class="elipse"></button>
+        </div>
+        <div class="div-btn-search">
+            <input type="text" placeholder="Buscar" class="input-search">
+            <button class="btn-search"><img src="/twitch/assets/lupa.png" alt=""></button>
+        </div>
+        <div class="layout-direito">
+            <button class="btn-layout-direito"><svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px"
+                    y="0px" class="icone-tw">
+                    <g>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M13.798 10.456L10 6.657l-3.798 3.799L4 8.805V13h12V8.805l-2.202 1.65zM18 5v8a2 2 0 0 1-2 2H4a2.002 2.002 0 0 1-2-2V5l4 3 4-4 4 4 4-3z">
+                        </path>
+                    </g>
+                </svg></button>
+            <button class="btn-layout-direito"><svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px"
+                    y="0px" class="ScIconSVG-sc-1bgeryd-1 eOJUoR">
+                    <g>
+                        <path fill-rule="evenodd"
+                            d="M4 3h12l2 4v10H2V7l2-4zm.236 4H8v1a1 1 0 001 1h2a1 1 0 001-1V7h3.764l-1-2H5.236l-1 2zM16 9h-2.17A3.001 3.001 0 0111 11H9a3.001 3.001 0 01-2.83-2H4v6h12V9z"
+                            clip-rule="evenodd"></path>
+                    </g>
+                </svg></button>
+            <button class="btn-layout-direito"><img src="/twitch/assets/chat.svg" alt=""></button>
+            <button class="btn-bits"><svg width="100%" height="100%" version="1.1" viewBox="0 0 20 20" x="0px" y="0px"
+                    class="ScIconSVG-sc-1bgeryd-1 eOJUoR">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M3 12l7-10 7 10-7 6-7-6zm2.678-.338L10 5.487l4.322 6.173-.85.728L10 11l-3.473 1.39-.849-.729z">
+                    </path>
+                </svg>
+                <div class="texto-bits">Comprar Bits</div>
+            </button>
+            <img src="/twitch/assets/logo.png" alt="" class="profile-picture">
+        </div>
+    </header>
+    <aside class="aside" id="aside">
+        <div class="followed-channel">
+            <h5>CANAIS SEGUIDOS</h5>
+            <button class="btn-colapse"><img src="/twitch/assets/colapse.svg" alt="" title="Ocultar"></button>
+        </div>
+        <div class="colapsed-icon"><svg type="color-fill-current" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScSvg-sc-1j5mt50-1 kMNUwy"><g><path fill-rule="evenodd" d="M9.171 4.171A4 4 0 006.343 3H6a4 4 0 00-4 4v.343a4 4 0 001.172 2.829L10 17l6.828-6.828A4 4 0 0018 7.343V7a4 4 0 00-4-4h-.343a4 4 0 00-2.829 1.172L10 5l-.829-.829zm.829 10l5.414-5.414A2 2 0 0016 7.343V7a2 2 0 00-2-2h-.343a2 2 0 00-1.414.586L10 7.828 7.757 5.586A2 2 0 006.343 5H6a2 2 0 00-2 2v.343a2 2 0 00.586 1.414L10 14.172z" clip-rule="evenodd"></path></g></svg></div>
+        <div class="followed-box"></div>
+        <div class="fs-div-mm">
+            <button class="fs-btn-mm" onclick="addFollowed(5, 10, true, 'followed', 0)"><span class="fs-mm">Mostrar mais</span></button>
+        </div>
+        <div class="recommended-channel">
+            <h5>CANAIS RECOMENDADOS</h5>
+        </div>
+        <div class="colapsed-icon"><svg type="color-fill-current" width="20px" height="20px" version="1.1" viewBox="0 0 20 20" x="0px" y="0px" class="ScSvg-sc-1j5mt50-1 kMNUwy"><g><path fill-rule="evenodd" d="M12.002 3.999a2 2 0 012 2v2L18 6v8l-3.998-2v2a2 2 0 01-2 1.999h-8a2 2 0 01-2-2V6a2 2 0 012-2h8zM12 6H4v8h8V6z" clip-rule="evenodd"></path></g></svg></div>
+        <div class="recommended-box"></div>
+        <div class="fs-div-mm">
+            <button class="fs-btn-mm" onclick="addFollowed(5, 10, true, 'recommended', 1)"><span class="fs-mm">Mostrar mais</span></button>
+        </div>
+        <div class="search-friends">
+            <div class="sf-div-input">
+                <input type="text" name="" class="sf-input" placeholder="Adicionar amigos">
+            </div>
+        </div>
+    </aside>
+    <section id="content">
+        <div class="sliders"></div>
+        <div class="sc-streams-layout">
+            <h5 class="sc-streams-h5">Canais ao vivo que achamos que vai gostar</h5>
+            <div class="sc-streams"></div>
+        </div>
+        <div class="lc-show-more">
+            <div class="layout-lc-sm-line">
+                <div class="lc-sm-line"></div>
+            </div>
+            <div><button class="sc-sm-btn" onclick="adicionarCanais(5, 10, true)">Mostrar mais <img
+                        src="/twitch/assets/smcolapse.svg" alt=""></button></div>
+            <div class="layout-lc-sm-line">
+                <div class="lc-sm-line"></div>
+            </div>
+        </div>
+        <div></div>
+        <div class="sc-categories-layout">
+            <h5 class="sc-categories-h5"><a href="#" class="purple-h5">Categorias</a> que achamos que vai gostar</h5>
+            <div class="sc-categories">
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/League%20of%20Legends-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">League of Legen...</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">180,7 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">MOBA</a>
+                            <a href="#" class="sc-lc-tag">Ação</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Just%20Chatting-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">Só na conversa</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">468,6 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">Vida Real</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/VALORANT-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">VALORANT</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">101,8 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">Jogo de tiro</a>
+                            <a href="#" class="sc-lc-tag">FPS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Fortnite-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">Fortnite</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">160,1 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">Jogo de tiro</a>
+                            <a href="#" class="sc-lc-tag">Ação</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/FIFA%2022-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">FIFA 22</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">268,6 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">Simulação</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Minecraft-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">Minecraft</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">111,7 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">Simulação</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Counter-Strike:%20Global%20Offensive-188x250.jpg"
+                        alt="" class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">Counter-Strike:...</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">135,6 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">FPS</a>
+                            <a href="#" class="sc-lc-tag">Jogo de tiro</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Grand%20Theft%20Auto%20V-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">Grand Theft Aut...</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">360,8 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">Aventura</a>
+                            <a href="#" class="sc-lc-tag">FPS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Sports-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">Esportes</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">21,1 mil espectadores</p>
+                        </a>
+                        <div>
+                            <a href="#" class="sc-lc-tag">Vida Real</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sc-category-card">
+                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Rocket%20League-188x250.jpg" alt=""
+                        class="sc-category-img">
+                    <div class="sc-category-info">
+                        <div class="display-flex">
+                            <a href="#">
+                                <h3 class="hover-purple">Rocket League</h3>
+                            </a>
+                            <div class="sc-lc-elipse">
+                                <button class="btn-elipse-sc-lc"><img src="/twitch/assets/elipse.svg" alt=""
+                                        class="elipse"></button>
+                            </div>
+                        </div>
+                        <a href="#">
+                            <p class="hover-purple">16 mil espectadores</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layout-category-line">
+            <div class="category-line"></div>
+        </div>
+    </section>
+    <script>
+        let colapseBtn = document.querySelector(".btn-colapse")
+        let colapseAside = document.querySelector("#aside")
+        let colapseBody = document.querySelector("body")
+
+        console.log(colapseAside)
+        console.log(colapseBtn)
+        colapseBtn.onclick = function () {
+            colapseAside.classList.toggle("colapsed-aside")
+            colapseBody.classList.toggle("colapsed-body")
+        }
+
+    </script>
+</body>
+
+</html>
